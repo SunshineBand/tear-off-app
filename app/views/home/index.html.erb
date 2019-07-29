@@ -2,4 +2,16 @@
 
 <h2> Popular Flyers </h2>
 
-<h2> This Months Donations </h2>
+<% @popular_flyers.each do |flyer| %>
+  <h3><strong> Title</strong>: <%= flyer.title %></h3>
+  <p><strong> Cost</strong>: $<%= flyer.cost %></p>
+  <p><strong> Date</strong>: <%= flyer.date_of_event %></p>
+  <p><strong> Project Supporting</strong>: <%= flyer.project.name %></p>
+<% end %>
+<%= link_to 'See more...', flyers_path %>
+
+<h2> Total Donations </h2>
+
+<% @projects.each do |project| %>
+  <p><%= "$#{project.balance_raised} has been raised for #{project.name}" %></p>
+<% end %>
