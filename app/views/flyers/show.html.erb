@@ -1,0 +1,83 @@
+<%stylesheet_link_tag 'flyers'%>
+
+<p id="notice"><%= notice %></p>
+<div class = "tears-wrapper">
+  <div class="flyer-info">
+    <p>
+      <strong>Project:</strong>
+      <%= @flyer.project.name %>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @flyer.title %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @flyer.category.name %>
+    </p>
+
+    <p>
+      <strong>Cost:</strong>
+      <%= "$#{@flyer.cost}" %>
+    </p>
+
+    <p>
+      <strong>Info:</strong>
+      <%= @flyer.info %>
+    </p>
+
+    <p>
+      <strong>Time of Event:</strong>
+      <%= @flyer.time %>
+    </p>
+
+    <p>
+      <strong>Event date:</strong>
+      <%= @flyer.date_of_event %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @flyer.user.email %>
+    </p>
+  </div>
+
+  <div class = "tears">
+    <div class = "tears-1">
+        Ticket 1
+        <li> <%=@flyer.date_of_event%> </li>
+         <li><%="$#{@flyer.cost}"%></li>
+    </div>
+    <div class = "tears-2">
+        Ticket 2
+        <li><%=@flyer.date_of_event%></li>
+        <li><%="$#{@flyer.cost}"%></li>
+       
+    </div>
+    <div class = "tears-3">
+        Ticket 3
+        <li> <%=@flyer.date_of_event%></li>
+         <li><%="$#{@flyer.cost}"%></li>
+    </div>
+    <div class = "tears-4">
+        Ticket 4
+        <li> <%=@flyer.date_of_event%></li>
+        <li> <%="$#{@flyer.cost}"%></li>
+    </div>
+    <div class = "tears-5">
+        Ticket 5
+        <li> <%=@flyer.date_of_event%></li>
+        <li> <%="$#{@flyer.cost}"%></li>
+    </div>
+    <div class = "tears-6">
+        Ticket 6
+         <li><%=@flyer.date_of_event%></li>
+         <li><%="$#{@flyer.cost}"%></li>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_flyer_path(@flyer) %> |
+<%= link_to 'Back', flyers_path %>
