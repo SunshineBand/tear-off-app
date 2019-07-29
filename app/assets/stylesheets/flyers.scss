@@ -1,0 +1,32 @@
+// Place all the styles related to the Flyers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tears-wrapper {
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "flyer-info"
+    "tears"
+}
+
+.flyer-info {
+    border: 1px;
+    border-style: solid;
+}
+.tears {
+    display: grid;
+    grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    grid-template-rows: 120px;
+}
+
+.tears-1, .tears-2, .tears-3, .tears-4, .tears-5, .tears-6 {
+    border: 1px;
+    border-style: dashed;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center
+}

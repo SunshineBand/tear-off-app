@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flyers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Cost</th>
+      <th>Info</th>
+      <th>Time of Event</th>
+      <th>Date of Event</th>
+      <th>Hosted By</th>
+      <th>Project</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flyers.each do |flyer| %>
+      <tr>
+        <td><%= flyer.title %></td>
+        <td><%= "$#{flyer.cost}" %></td>
+        <td><%= flyer.info %></td>
+        <td><%= flyer.time %></td>
+        <td><%= flyer.date_of_event %></td>
+        <td><%= flyer.user.username %></td>
+        <td><%= flyer.project.name %></td>
+        <td><%= flyer.category.name %></td>
+        <td><%= link_to 'Show', flyer %></td>
+        <td><%= link_to 'Edit', edit_flyer_path(flyer) %></td>
+        <td><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flyer', new_flyer_path %>
