@@ -71,6 +71,6 @@ class FlyersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flyer_params
-      params.require(:flyer).permit(:title, :cost, :info, :time, :date_of_event, :user_id, :project_id, :category_id)
+      params.require(:flyer).permit(:title, :cost, :info, :time, :date_of_event, :user_id, :project_id, :category_id, :max_attendees)
     end
 end
