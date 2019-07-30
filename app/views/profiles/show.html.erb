@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%if @profile.uploaded_image.attached?%>
+    <%= image_tag @profile.uploaded_image.service_url, class: 'image-size'%>
+  <%else%>
+    <%= "No image uploaded"%>
+  <%end%>
+</p>
+
+<p>
   <strong>City:</strong>
   <%= @profile.city %>
 </p>
