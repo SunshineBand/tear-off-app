@@ -15,10 +15,7 @@ class ProfilesController < ApplicationController
     @join_tables.each do |join|
       @attended_flyer << join.flyer 
     end
-    # @join_tables.each do |join|
-    #   @attended_flyer_id << join.flyer_id 
-    # end
-    # do a loop using the attended flyer id array. Flyer.where(id: attended_flyer_id)
+   
     
   end
 
