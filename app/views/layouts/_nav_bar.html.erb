@@ -4,16 +4,14 @@
     <div><%= link_to 'Home', '/' %></div>
     <div><%= link_to 'Projects', '#' %></div>
     <div><%= link_to 'About Us', '#' %></div>
-    <div><%= link_to 'Flyers', '/flyers' %>
+    <div><%= link_to 'Flyers', '/flyers' %></div>
     
     <% if user_signed_in? %>
-      <div>
         <% if current_user.profile.nil? %>
-          <%= link_to current_user.username, new_profile_path %>
+          <div><%= link_to current_user.username, new_profile_path %></div>
         <% else %>
-          <%= link_to current_user.username, "/profiles/#{current_user.profile.id}" %>
+          <div><%= link_to current_user.username, "/profiles/#{current_user.profile.id}" %></div>
         <% end %>
-      </div>
       <div><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
     <% else %>
       <div><%= link_to "Log in", new_session_path(resource_name) %></div>
