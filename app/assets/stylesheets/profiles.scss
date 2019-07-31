@@ -1,3 +1,19 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.image-size {
+    width: 100px;
+    height: 100px;
+}
+
+.tears-grid {
+    display: grid;
+    width: 50%;
+    height: 50%;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+}
+.tears {
+    border: 1px;
+    border-style: dotted;
+}

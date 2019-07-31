@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :show, :index]
   # GET /profiles
   # GET /profiles.json
   def index
@@ -10,11 +10,18 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @join_tables=FlyerAttendedByUser.where(user: current_user)
+    @attended_flyer = []
+    @join_tables.each do |join|
+      @attended_flyer << join.flyer 
+    end
+   
+    
   end
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+      @profile = Profile.new
   end
 
   # GET /profiles/1/edit
@@ -69,6 +76,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:city, :bio, :user_id)
+      params.require(:profile).permit(:city, :bio, :user_id, :uploaded_image)
     end
 end

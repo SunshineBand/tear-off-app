@@ -39,7 +39,7 @@
     </p>
 
     <p>
-      <strong>User:</strong>
+      <strong>Host:</strong>
       <%= @flyer.user.email %>
     </p>
   </div>
@@ -49,32 +49,37 @@
         Ticket 1
         <li> <%=@flyer.date_of_event%> </li>
          <li><%="$#{@flyer.cost}"%></li>
+         <%= render 'layouts/stripe_form' %>
     </div>
     <div class = "tears-2">
         Ticket 2
         <li><%=@flyer.date_of_event%></li>
         <li><%="$#{@flyer.cost}"%></li>
-       
+       <%= render 'layouts/stripe_form' %>
     </div>
     <div class = "tears-3">
         Ticket 3
         <li> <%=@flyer.date_of_event%></li>
          <li><%="$#{@flyer.cost}"%></li>
+         <%= render 'layouts/stripe_form' %>
     </div>
     <div class = "tears-4">
         Ticket 4
         <li> <%=@flyer.date_of_event%></li>
         <li> <%="$#{@flyer.cost}"%></li>
+        <%= render 'layouts/stripe_form' %>
     </div>
     <div class = "tears-5">
         Ticket 5
         <li> <%=@flyer.date_of_event%></li>
         <li> <%="$#{@flyer.cost}"%></li>
+        <%= render 'layouts/stripe_form' %>
     </div>
     <div class = "tears-6">
         Ticket 6
          <li><%=@flyer.date_of_event%></li>
          <li><%="$#{@flyer.cost}"%></li>
+         <%= render 'layouts/stripe_form' %>
     </div>
   </div>
 </div>
