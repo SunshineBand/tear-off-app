@@ -5,4 +5,6 @@ class HomeController < ApplicationController
     # CHANGE popular flyers to pull flyers where the most users are attending then REMOVE this comment
     @popular_flyers = Flyer.order('max_attendees').limit(3)
   end
+  def about_us
+  end
 end
