@@ -5,6 +5,8 @@ class FlyersController < ApplicationController
   # GET /flyers.json
   def index
     @flyers = Flyer.all
+    @flyers_returned = Flyer.search(params[:title])
+    
   end
 
   # GET /flyers/1
