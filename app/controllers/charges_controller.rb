@@ -12,6 +12,7 @@ class ChargesController < ApplicationController
       new_join.flyer_id = @flyer.id
       new_join.save!
       
+      
     
       customer = Stripe::Customer.create({
         email: params[:stripeEmail],

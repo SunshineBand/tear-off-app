@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%stylesheet_link_tag 'profiles'%>
 
 <p>
   <%if @profile.uploaded_image.attached?%>
@@ -22,6 +23,19 @@
   <strong>User:</strong>
   <%= @profile.user.username %>
 </p>
+
+<div class = "tears-grid">
+  <strong>MY TEARS</strong><br>
+  
+  <%@attended_flyer.each do |flyer|%>
+  <div class = "tears">
+    <p>Title:<br> <%=flyer.title%> </p>  
+    <p>Information:<br><%=flyer.info%></p>  
+    <p>Time of Event:<br><%=flyer.time%></p>  
+    <p>Date of Event: <br><%=flyer.date_of_event%> </p>  
+  </div>
+  <%end%>
+</div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
