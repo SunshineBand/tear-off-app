@@ -10,6 +10,16 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @join_tables=FlyerAttendedByUser.where(user: current_user)
+    @attended_flyer = []
+    @join_tables.each do |join|
+      @attended_flyer << join.flyer 
+    end
+    # @join_tables.each do |join|
+    #   @attended_flyer_id << join.flyer_id 
+    # end
+    # do a loop using the attended flyer id array. Flyer.where(id: attended_flyer_id)
+    
   end
 
   # GET /profiles/new

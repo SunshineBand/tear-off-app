@@ -5,3 +5,15 @@
     width: 100px;
     height: 100px;
 }
+
+.tears-grid {
+    display: grid;
+    width: 50%;
+    height: 50%;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+}
+.tears {
+    border: 1px;
+    border-style: dotted;
+}
