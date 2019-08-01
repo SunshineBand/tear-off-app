@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Flyers</h1>
+<br><br><br><br>
+
+<div>
+  Search Flyers
+  <%= form_tag(flyers_path, method: :get) do %>
+  <%= text_field_tag :title, params[:title] %>
+  <%= submit_tag 'Search' %>
+  <% @flyers_returned.each do |flyer|%>
+    <p><%= flyer.title %></p>
+    <p><%= "$#{flyer.cost}" %></p>
+    <p><%= flyer.date_of_event %></p>
+    <p><%= flyer.project.name %></p>
+    <p><%= flyer.category.name %></p>
+    <%end%>
+<% end %>
+</div>
+<br><br><br><br><br>
+Hello
 
 <% @flyers.each do |flyer| %>
   <div class="flyer">
