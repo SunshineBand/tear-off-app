@@ -14,25 +14,14 @@
     <p><%= flyer.date_of_event %></p>
     <p><%= flyer.project.name %></p>
     <p><%= flyer.category.name %></p>
-    <%end%>
-<% end %>
-</div>
-<br><br><br><br><br>
-Hello
-
-<% @flyers.each do |flyer| %>
-  <div class="flyer">
-    <p><%= flyer.title %></p>
-    <p><%= "$#{flyer.cost}" %></p>
-    <p><%= flyer.date_of_event %></p>
-    <p><%= flyer.project.name %></p>
-    <p><%= flyer.category.name %></p>
     <p><%= link_to 'Show', flyer %></p>
     <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
     <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  </div>
+    <%end%>
 <% end %>
-
+</div>
 <br>
 
+
 <%= link_to 'New Flyer', new_flyer_path %>
+<br> <br><br>

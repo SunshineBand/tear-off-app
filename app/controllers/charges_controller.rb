@@ -12,7 +12,10 @@ class ChargesController < ApplicationController
       new_join.flyer_id = @flyer.id
       new_join.save!
       
-      
+      @project_deposit = (@amount/100)/2
+      @selected_project = Project.find_by(name: @flyer.project.name) 
+      @selected_project.balance_raised += @project_deposit
+      @selected_project.save!
     
       customer = Stripe::Customer.create({
         email: params[:stripeEmail],
