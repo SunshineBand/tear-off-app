@@ -2,7 +2,16 @@
 
 <h1>Flyers</h1>
 
+<div class="category-list">
+  <h2>Categories</h2>
+  <% @category_list.each do |category| %>
+    <%= link_to category.name, "/category/#{category.id}" %>
+    <br>
+  <% end %>
+</div>
+
 <div class="popular-flyers">
+  <h2>Popular Flyers</h2>
   <% @popular_flyers.each do |flyer| %>
     <div class="flyer">
       <p><%= flyer.title %></p>
@@ -19,6 +28,18 @@
   <%= link_to 'more...', '/flyers/all' %>
 </div>
 
+<div class="random-category-list">
+  <h2><%= @random_category.name %></h2>
+  <% @random_category.flyers.each do |flyer| %>
+    <div class="flyer">
+      <p><%= link_to flyer.title, flyer %></p>
+      <p><%= "$#{flyer.cost}" %></p>
+      <p><%= flyer.date_of_event %></p>
+      <p><%= flyer.project.name %></p>
+      <br>
+    </div>
+  <% end %>
+</div>
 
 <br>
 
