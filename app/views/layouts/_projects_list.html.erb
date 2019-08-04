@@ -1,0 +1,11 @@
+<div class="sort-by-project">
+  <h2> Sort By Project </h2>
+  <div class="project-block">
+    <% projects.each do |project| %>
+      <div class="project">
+        <p><%= project.name %></p>
+        <p>So far we have raised: <%= project.balance_raised %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
