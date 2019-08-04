@@ -5,6 +5,10 @@ class FlyersController < ApplicationController
   # GET /flyers.json
   def index
     @flyers = Flyer.all
+    popular_flyers = @flyers.reject { |flyer| !flyer.max_attendees }
+    @popular_flyers = popular_flyers.sort_by { |flyer| flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count }
+    
+    # flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count
   end
 
   # GET /flyers/1

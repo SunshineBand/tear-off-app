@@ -5,7 +5,9 @@
     <div class="flyer-block">
       <p><%= flyer.title %></p>
       <p><%= flyer.project.name %></p>
-      <p> Spots available <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: 1).count %></p>
+      <% if flyer.max_attendees %>
+        <p> Spots available <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %></p>
+      <% end %>
     </div>
   <% end %>
 </div>
