@@ -9,7 +9,7 @@ class FlyersController < ApplicationController
     @popular_flyers = popular_flyers.sort_by { |flyer| flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count }
     @category_list = Category.all.sample 6
     @random_category = Category.all.sample(1).first
-    
+    @projects = Project.all
     # flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count
   end
 

@@ -39,7 +39,10 @@
       <br>
     </div>
   <% end %>
+  <%= link_to 'more...', "/category/#{@random_category.id}" %>
 </div>
+
+<%= render 'layouts/projects_list', projects: @projects %>
 
 <br>
 
