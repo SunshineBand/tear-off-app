@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get "/flyers/all" => "flyers#all"
   resources :flyers do
     resources :charges
   end

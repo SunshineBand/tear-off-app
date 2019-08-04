@@ -2,19 +2,23 @@
 
 <h1>Flyers</h1>
 
-<% @popular_flyers.each do |flyer| %>
-  <div class="flyer">
-    <p><%= flyer.title %></p>
-    <p><%= "$#{flyer.cost}" %></p>
-    <p><%= flyer.date_of_event %></p>
-    <p><%= flyer.project.name %></p>
-    <p><%= link_to flyer.category.name, "/category/#{flyer.category.id}" %></p>
-    <p><%= link_to 'Show', flyer %></p>
-    <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
-    <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <br>
-  </div>
-<% end %>
+<div class="popular-flyers">
+  <% @popular_flyers.each do |flyer| %>
+    <div class="flyer">
+      <p><%= flyer.title %></p>
+      <p><%= "$#{flyer.cost}" %></p>
+      <p><%= flyer.date_of_event %></p>
+      <p><%= flyer.project.name %></p>
+      <p><%= link_to flyer.category.name, "/category/#{flyer.category.id}" %></p>
+      <p><%= link_to 'Show', flyer %></p>
+      <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
+      <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <br>
+    </div>
+  <% end %>
+  <%= link_to 'more...', '/flyers/all' %>
+</div>
+
 
 <br>
 

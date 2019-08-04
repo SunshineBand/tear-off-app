@@ -11,6 +11,10 @@ class FlyersController < ApplicationController
     # flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count
   end
 
+  def all
+    @flyers = Flyer.all
+  end
+
   # GET /flyers/1
   # GET /flyers/1.json
   def show
