@@ -5,8 +5,17 @@ class FlyersController < ApplicationController
   # GET /flyers.json
   def index
     @flyers = Flyer.all
+    popular_flyers = @flyers.reject { |flyer| !flyer.max_attendees }
+    @popular_flyers = popular_flyers.sort_by { |flyer| flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count }
+    @category_list = Category.all.sample 6
+    @random_category = Category.all.sample(1).first
+    @projects = Project.all
+    # flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count
+  end
+
+  def all
+    @flyers = Flyer.all
     @flyers_returned = Flyer.search(params[:title])
-    
   end
 
   # GET /flyers/1

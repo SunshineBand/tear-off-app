@@ -1,0 +1,15 @@
+<h1> Category: <%= @category.name %> </h1>
+
+<div class="flyer-grid">
+  <% @category.flyers.each do |flyer| %>
+    <div class="flyer-block">
+      <p><%= flyer.title %></p>
+      <p><%= flyer.project.name %></p>
+      <% if flyer.max_attendees %>
+        <p> Spots available <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'layouts/projects_list', projects: @projects %>
