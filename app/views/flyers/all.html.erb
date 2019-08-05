@@ -1,16 +1,23 @@
 <h1> All Flyers </h1>
 
 
-<% @flyers.each do |flyer| %>
-  <div class="flyer">
+<div>
+  Search Flyers
+  <%= form_tag('/flyers/all', method: :get) do %>
+  <%= text_field_tag :title, params[:title] %>
+  <%= submit_tag 'Search' %>
+  <% @flyers_returned.each do |flyer|%>
     <p><%= flyer.title %></p>
     <p><%= "$#{flyer.cost}" %></p>
     <p><%= flyer.date_of_event %></p>
     <p><%= flyer.project.name %></p>
-    <p><%= link_to flyer.category.name, "/category/#{flyer.category.id}" %></p>
+    <p><%= flyer.category.name %></p>
     <p><%= link_to 'Show', flyer %></p>
     <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
     <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <br>
-  </div>
+    <%end%>
 <% end %>
+</div>
+
+<%= link_to 'New Flyer', new_flyer_path %>
+<br> <br><br>

@@ -14,7 +14,6 @@ class FlyersController < ApplicationController
   end
 
   def all
-    @flyers = Flyer.all
     @flyers_returned = Flyer.search(params[:title])
   end
 
