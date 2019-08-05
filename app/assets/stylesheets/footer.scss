@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+    
+.social-media-buttons {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+  }
+.other-info {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
