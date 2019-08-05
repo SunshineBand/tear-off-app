@@ -15,6 +15,7 @@ class FlyersController < ApplicationController
 
   def all
     @flyers = Flyer.all
+    @flyers_returned = Flyer.search(params[:title])
   end
 
   # GET /flyers/1

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Flyers</h1>
+<br><br><br><br>
 
 <div class="category-list">
   <h2>Categories</h2>
@@ -44,6 +45,25 @@
 
 <%= render 'layouts/projects_list', projects: @projects %>
 
+<div>
+  Search Flyers
+  <%= form_tag(flyers_path, method: :get) do %>
+  <%= text_field_tag :title, params[:title] %>
+  <%= submit_tag 'Search' %>
+  <% @flyers_returned.each do |flyer|%>
+    <p><%= flyer.title %></p>
+    <p><%= "$#{flyer.cost}" %></p>
+    <p><%= flyer.date_of_event %></p>
+    <p><%= flyer.project.name %></p>
+    <p><%= flyer.category.name %></p>
+    <p><%= link_to 'Show', flyer %></p>
+    <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
+    <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <%end%>
+<% end %>
+</div>
 <br>
 
+
 <%= link_to 'New Flyer', new_flyer_path %>
+<br> <br><br>
