@@ -1,42 +1,55 @@
 <p id="notice"><%= notice %></p>
 <%stylesheet_link_tag 'profiles'%>
 
-<p>
-  <%if @profile.uploaded_image.attached?%>
-    <%= image_tag @profile.uploaded_image.service_url, class: 'image-size'%>
-  <%else%>
-    <%= "No image uploaded"%>
-  <%end%>
-</p>
+<body>
+  <div class="edit">
+      <%= link_to 'Edit', edit_profile_path(@profile) %> 
+    </div>
+  <div class="full-wrap">
+    <div class="left-wrap">
+      
+      <div class="image-border">
+          <%if @profile.uploaded_image.attached?%>
+            <%= image_tag @profile.uploaded_image.service_url, class: 'image-size'%>
+          <%else%>
+            <%= "No image uploaded"%>
+          <%end%>
+      </div>
+    </div>
+    <div class="right-wrap">
+      <h2><strong>Alias: </h2></strong> 
+      <p>
+        <%= @profile.user.username %>
+      </p><br>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.username %>
-</p>
-
-<div class = "tears-grid">
-  <strong>MY TEARS</strong><br>
-  
-  <%@attended_flyer.each do |flyer|%>
-  <div class = "tears">
-    <p>Title:<br> <%=flyer.title%> </p>  
-    <p>Information:<br><%=flyer.info%></p>  
-    <p>Time of Event:<br><%=flyer.time%></p>  
-    <p>Date of Event: <br><%=flyer.date_of_event%> </p>  
-    <p>Location: <br><%=flyer.address%></p>
+      <h2><strong>From:</h2></strong> 
+      <p>
+        <%= @profile.city %>
+      </p><br>
+      
+      <h2><strong>Bio:</strong></h2>
+     
+      <p> 
+        <%= @profile.bio %>
+      </p>
+    </div>
   </div>
-  <%end%>
-</div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+
+  <div class="my-tears-wrapper">
+    <h2 class="torn-off"><strong>Torn Off:</strong></h2><br>
+    <div class = "my-tears-grid">
+      <%@attended_flyer.each do |flyer|%>
+      <div class = "my-tears">
+        <p>Title: <%=flyer.title%> </p>  
+        <p>Information:<%=flyer.info%></p>  
+        <p>Time of Event:<%=flyer.time.strftime("%H:%M %P")%></p>  
+        <p>Date of Event: <%=flyer.date_of_event.strftime("%d %B %Y")%> </p>  
+        <p>Location: <br><%=flyer.address%></p>
+          <%= link_to "Show Listing", "/flyers/#{flyer.id}" %>
+      </div>
+      <%end%>
+    </div>
+  </div>
+  
+</body>
