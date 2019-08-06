@@ -1,17 +1,31 @@
-<h1> TEAR OFF </h1>
+<%= stylesheet_link_tag 'home' %>
 
-<h2> Popular Flyers </h2>
+<div class="banner"></div>
 
-<% @popular_flyers.each do |flyer| %>
-  <h3><strong> Title</strong>: <%= flyer.title %></h3>
-  <p><strong> Cost</strong>: $<%= flyer.cost %></p>
-  <p><strong> Date</strong>: <%= flyer.date_of_event %></p>
-  <p><strong> Project Supporting</strong>: <%= flyer.project.name %></p>
-<% end %>
-<%= link_to 'See more...', flyers_path %>
+<div class="content-wrap">
+  
+ 
+  <div class="popular-flyers">
+   <div class="heading">
+      <h3> Popular Flyers </h3>
+      <%= link_to 'more tears.', flyers_path %>
+    </div>
+    <% @popular_flyers.each_with_index do |flyer, index| %>
+      <%= link_to flyer do%>
+        <div class="flyers-<%="#{index}"%>">
+          <h4><%= flyer.title %></h4>
+          <p>$<%= flyer.cost %></p>
+          <p><%= flyer.project.name %></p>
+        </div>
+      <%end%>
+    <% end %>
+  </div>
 
-<h2> Total Donations </h2>
-
-<% @projects.each do |project| %>
-  <p><%= "$#{project.balance_raised} has been raised for #{project.name}" %></p>
-<% end %>
+  <div class="total-donations">
+    <h2> Total Donations </h2>
+    
+    <% @projects.each do |project| %>
+      <p><%= "$#{project.balance_raised} has been raised for #{project.name}" %></p>
+    <% end %>
+  </div>
+</div>

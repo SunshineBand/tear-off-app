@@ -1,11 +1,13 @@
 * {
-  padding: 0;
+  padding: 2px;
   margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 @import 'charges';
 @import 'flyers';
-@import 'home';
 @import 'profiles';
-@import 'scaffolds';
 @import 'navbar';
+@import 'home';
+@import 'footer'
+// @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap');
