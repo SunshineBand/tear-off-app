@@ -1,31 +1,33 @@
 <%= stylesheet_link_tag 'home' %>
+<body>
+  <div class="banner"></div>
 
-<div class="banner"></div>
-
-<div class="content-wrap">
-  
- 
-  <div class="popular-flyers">
-   <div class="heading">
-      <h3> Popular Flyers </h3>
-      <%= link_to 'more tears.', flyers_path %>
-    </div>
-    <% @popular_flyers.each_with_index do |flyer, index| %>
-      <%= link_to flyer do%>
-        <div class="flyers-<%="#{index}"%>">
-          <h4><%= flyer.title %></h4>
-          <p>$<%= flyer.cost %></p>
-          <p><%= flyer.project.name %></p>
-        </div>
-      <%end%>
-    <% end %>
-  </div>
-
-  <div class="total-donations">
-    <h2> Total Donations </h2>
+  <div class="content-wrap">
     
-    <% @projects.each do |project| %>
-      <p><%= "$#{project.balance_raised} has been raised for #{project.name}" %></p>
-    <% end %>
+  
+    <div class="popular-flyers">
+      <div class="heading">
+        <h3> Popular Flyers </h3>
+        <%= link_to 'more tears.', flyers_path %>
+      </div>
+      <% @popular_flyers.each_with_index do |flyer, index| %>
+        <%= link_to flyer do%>
+          <div class="flyers-<%="#{index}"%>">
+            <h4><%= flyer.title %></h4>
+            <p>$<%= flyer.cost %></p>
+            <p><%= flyer.project.name %></p>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+
+    <div class="total-donations">
+      <div class="donations-header"><h2> Total Donations </h2></div>
+      <% @projects.each_with_index do |project,index| %>
+      <div class="project-<%="#{index}"%>">
+        <%= "$#{project.balance_raised} has been raised for #{project.name}" %>
+      </div>
+      <% end %>
+    </div>
   </div>
-</div>
+</body>

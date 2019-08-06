@@ -3,10 +3,12 @@ header {
   text-decoration: none;
   color: white;
   font-family: 'Red Hat Display', sans-serif;
-  background-color: #313639;
+  background-color: #2d383a;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid;
+  border-bottom-color: #01f39c;
 
   .nav{
     div{
