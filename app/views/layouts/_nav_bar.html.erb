@@ -1,10 +1,10 @@
 <header>
   <div class="logo"> <img src='https://dl.dropboxusercontent.com/s/26touyikgjngmry/Tearoff_logo%28green%29-04.png?dl=0'><p>TearOff</p></div>
   <div class="nav">
-    <div><%= link_to 'Home', '/' %></div>
-    <div><%= link_to 'Projects', '#' %></div>
-    <div><%= link_to 'About Us', '#' %></div>
-    <div><%= link_to 'Flyers', '/flyers' %></div>
+    <div><%= link_to 'home', '/' %></div>
+    <div><%= link_to 'projects', '/projects' %></div>
+    <div><%= link_to 'about us', '/about_us' %></div>
+    <div><%= link_to 'flyers', '/flyers' %></div>
     
     <% if user_signed_in? %>
         <% if current_user.profile.nil? %>
@@ -12,10 +12,10 @@
         <% else %>
           <div><%= link_to current_user.username, "/profiles/#{current_user.profile.id}" %></div>
         <% end %>
-      <div><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
+      <div><%= link_to 'sign out', destroy_user_session_path, method: :delete %></div>
     <% else %>
-      <div><%= link_to "Log in", new_session_path(resource_name) %></div>
-      <div><%= link_to "Sign up", new_registration_path(resource_name) %></div>
+      <div><%= link_to "log in", new_session_path(resource_name) %></div>
+      <div><%= link_to "sign up", new_registration_path(resource_name) %></div>
     <% end %>
   </div>
 </header>

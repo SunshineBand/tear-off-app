@@ -8,7 +8,7 @@
   <div class="popular-flyers">
    <div class="heading">
       <h3> Popular Flyers </h3>
-      <%= link_to 'See more...', flyers_path %>
+      <%= link_to 'more tears.', flyers_path %>
     </div>
     <% @popular_flyers.each_with_index do |flyer, index| %>
       <%= link_to flyer do%>
@@ -23,7 +23,7 @@
 
   <div class="total-donations">
     <h2> Total Donations </h2>
-
+    
     <% @projects.each do |project| %>
       <p><%= "$#{project.balance_raised} has been raised for #{project.name}" %></p>
     <% end %>

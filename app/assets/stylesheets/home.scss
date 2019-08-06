@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +12,7 @@ body{
 .banner {
     background-image: url("https://dl.dropboxusercontent.com/s/d8euk5zh0kq6l1h/tear-off-how-banner.png?dl=0");
     background-size: cover;
-    width: 95vw;
+    width: 100vw;
     height: 50vh;
     z-index: 10;
     margin: 2px;
@@ -28,9 +29,12 @@ body{
 
 .content-wrap{
     display: table;
-    padding: 5px;
-    margin: 5px;
-    width: 100%;
+    background-color: rgb(49,54,57);
+    // position: relative;
+    // right: 30px;
+    padding: 40px;
+    // margin: 40px;
+    width: 95%;
     height: 300px;
 
     // display: flex;
@@ -67,7 +71,7 @@ body{
     }
     
     a:hover {
-        border-bottom: 2px solid;
+        border-bottom: 0.4px solid;
         border-bottom-color: #01f39c;
         
 
@@ -107,18 +111,20 @@ body{
 
 .popular-flyers{
     position: absolute;
-    left: 0px;
-    width: 50%;
+    border: 0.4px solid;
+    border-color: #01f39c;
+    padding: 0px;
+    width: 42%;
     height: 40vh;
-    background-image: url(https://dl.dropboxusercontent.com/s/oo5z94r6co678tp/popular-flyers.png?dl=0);
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-image: url(https://dl.dropboxusercontent.com/s/igsqawly8yf4tof/pop-flyers.png?dl=0);
+    // background-image: url(https://dl.dropboxusercontent.com/s/c972kbu31jevmmh/pop-fly.png?dl=0);
+    // background-size: cover;
+    // background-repeat: no-repeat;
     text-decoration: none;
     color: white;
     display: grid;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    margin: 2px;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 20% 80%;
     grid-template-areas: 
@@ -144,18 +150,21 @@ body{
 
 
 .total-donations{
-    background-image: url(https://dl.dropboxusercontent.com/s/x55qt1v2g5gwmwf/projects.png?dl=0);
-    background-size: fill;
-    background-repeat: no-repeat;
+    // background-image: url(https://dl.dropboxusercontent.com/s/x55qt1v2g5gwmwf/projects.png?dl=0);
+    // background-size: fill;
+    // background-repeat: no-repeat;
+    border: 0.4px solid;
+    border-color: #01f39c;
     position: absolute;
-    right: 0px;
-    width: 50%;
+    right: 30px;
+    width: 42%;
     height: 40vh;
     grid-area: donations;
+    color: white;
     padding: 0;
-    margin: 0;
+    margin: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
