@@ -1,49 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Flyers</h1>
-<div class="category-list">
-  <h2>Categories</h2>
-  <div class="flyer-container">
-    <% @category_list.each do |category| %>
-      <div class="flyer-icon <%= category.name %>">
-        <%= link_to category.name, "/category/#{category.id}" %>
-      </div>
-    <% end %>
+<div class="flyers-content">
+  <h1>Flyers</h1>
+  <div class="category-list">
+    <h2>Categories</h2>
+    <div class="category-container">
+      <% @category_list.each do |category| %>
+        <%= link_to "/category/#{category.id}" do %>
+          <div class="flyer-icon" style="background-image: url(<%= category.image_link %>)">
+            <%= category.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="popular-flyers">
-  <h2>Popular Flyers</h2>
-  <div class="flyer-container">
-    <% @popular_flyers.each do |flyer| %>
-      <div class="flyer-icon">
-        <p><%= flyer.title %></p>
+  <div class="popular">
+    <h2>Popular Flyers</h2>
+    <div class="flyer-container">
+      <% @popular_flyers.each do |flyer| %>
+        <%= link_to flyer do %>
+          <div class="flyer-icon">
+            <% if flyer.title.length <= 16 %>
+              <p><%= flyer.title %></p>
+            <% else %>
+              <p><%= flyer.title.slice(0...15) + " ..." %>
+            <% end %>
+            <p><%= flyer.project.name %></p>
+            <p><%= "$#{flyer.cost}" %></p>
+            
+            <!--
+            <p><%= link_to 'Show', flyer %></p>
+            <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
+            <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            -->
+            <br>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to 'more...', '/flyers/all' %>
+  </div>
+
+  <div class="random-category-list">
+    <h2><%= @random_category.name %></h2>
+    <% @random_category.flyers.each do |flyer| %>
+      <div class="flyer">
+        <p><%= link_to flyer.title, flyer %></p>
         <p><%= "$#{flyer.cost}" %></p>
         <p><%= flyer.date_of_event %></p>
         <p><%= flyer.project.name %></p>
-        <p><%= link_to flyer.category.name, "/category/#{flyer.category.id}" %></p>
-        <p><%= link_to 'Show', flyer %></p>
-        <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
-        <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <br>
       </div>
     <% end %>
+    <%= link_to 'more...', "/category/#{@random_category.id}" %>
   </div>
-  <%= link_to 'more...', '/flyers/all' %>
-</div>
 
-<div class="random-category-list">
-  <h2><%= @random_category.name %></h2>
-  <% @random_category.flyers.each do |flyer| %>
-    <div class="flyer">
-      <p><%= link_to flyer.title, flyer %></p>
-      <p><%= "$#{flyer.cost}" %></p>
-      <p><%= flyer.date_of_event %></p>
-      <p><%= flyer.project.name %></p>
-      <br>
-    </div>
-  <% end %>
-  <%= link_to 'more...', "/category/#{@random_category.id}" %>
+  <%= render 'layouts/projects_list', projects: @projects %>
 </div>
-
-<%= render 'layouts/projects_list', projects: @projects %>

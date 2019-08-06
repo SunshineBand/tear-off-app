@@ -10,7 +10,7 @@
 # categories = [
 #   {
 #     name: "Music",
-#     image_link: "https://dl.dropboxusercontent.com/s/cu6nxsy712sb25h/music.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/il3tctb1t9hb73f/music.png?dl=0"
 #   },
 #   {
 #     name: "Tech",
@@ -18,39 +18,39 @@
 #   },
 #   {
 #     name: "Cooking",
-#     image_link: "https://dl.dropbox.com/s/ahhgnvyym6w8hoa/cooking.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/irdnria945za3lv/cooking.png?dl=0"
 #   },
 #   {
 #     name: "Life Skills",
-#     image_link: "https://dl.dropbox.com/s/94ijuefujexwius/life-skill.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/pd36k7ph0ude3w5/life-skill.png?dl=0"
 #   },
 #   {
 #     name: "Tutoring",
-#     image_link: "https://dl.dropbox.com/s/pd7dplj7rk89zw0/tutoring.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/4zac0w22l2gncu5/tutoring.png?dl=0"
 #   },
 #   {
 #     name: "Business",
-#     image_link: "https://dl.dropbox.com/s/fos3145gjeg67i6/business.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/0z1zs5utvwd53cz/business.png?dl=0"
 #   },
 #   {
 #     name: "Office Skills",
-#     image_link: "https://dl.dropbox.com/s/84gazs1vzkui1ga/office-skills.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/qi6nj2rz3e164cn/office-skills.png?dl=0"
 #   },
 #   {
 #     name: "Languages",
-#     image_link: "https://dl.dropbox.com/s/v55bejioxoc9l11/languages.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/tkle8bligulmzb0/language.png?dl=0"
 #   },
 #   {
 #     name: "Personal Development",
-#     image_link: "https://dl.dropbox.com/s/pn1ofsp1g9iqgdh/personal-development.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/i54shg81xwxdj3s/personal-dev.png?dl=0"
 #   },
 #   {
 #     name: "Arts",
-#     image_link: "https://dl.dropbox.com/s/skjbth47ebovsfw/art.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/qt68382j4mt99in/arts.png?dl=0"
 #   },
 #   {
 #     name: "Photography",
-#     image_link: "https://dl.dropbox.com/s/y58v42ma4g9vh1n/photography.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/thzra6s13x4nhx8/photography.png?dl=0"
 #   },
 #   {
 #     name: "Fitness",
@@ -58,11 +58,11 @@
 #   },
 #   {
 #     name: "Academics",
-#     image_link: "https://dl.dropbox.com/s/8zfb5fo0azskclm/academics.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/hgvqb5nytv4tlf7/academics.png?dl=0"
 #   },
 #   {
 #     name: "Other",
-#     image_link: "https://dl.dropbox.com/s/67wfk94m2ec0k73/other.png?dl=0"
+#     image_link: "https://dl.dropbox.com/s/b3xqctdjerc77t8/other.png?dl=0"
 #   },
 # ]
 
