@@ -8,7 +8,7 @@
       <% @category_list.each do |category| %>
         <%= link_to "/category/#{category.id}" do %>
           <div class="flyer-icon" style="background-image: url(<%= category.image_link %>)">
-            <%= category.name %>
+            <h3><%= category.name unless category.name == "Other"%></h3>
           </div>
         <% end %>
       <% end %>
