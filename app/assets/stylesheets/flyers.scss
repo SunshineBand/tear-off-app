@@ -30,3 +30,18 @@
     justify-content: center;
     align-content: center
 }
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flyer-container {
+  display: flex;
+  justify-content: space-around;
+  .flyer-icon {
+    background-color: lightblue;
+  }
+}
