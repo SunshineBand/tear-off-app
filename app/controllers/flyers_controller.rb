@@ -6,7 +6,7 @@ class FlyersController < ApplicationController
   def index
     @flyers = Flyer.all
     popular_flyers = @flyers.reject { |flyer| !flyer.max_attendees }
-    @popular_flyers = popular_flyers.sort_by { |flyer| flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count }
+    @popular_flyers = (popular_flyers.sort_by { |flyer| flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count })[0..5]
     @category_list = Category.all.sample 6
     @random_category = Category.all.sample(1).first
     @projects = Project.all
