@@ -11,9 +11,13 @@ a:visited {
 
 .flyers-content {
   margin: 20px 8%;
-  background-color: #FCFCFC;
+  // background-color: #FCFCFC;
   h1 {
     color: #2b2b2b;
+  }
+
+  h3 {
+    background-color: none;
   }
 }
 
