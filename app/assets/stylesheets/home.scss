@@ -27,7 +27,7 @@
     margin: 10px;
     padding: 20px;
     width: 100%;
-    height: 250px;
+    height: 30vh;
 
 }
 
@@ -69,35 +69,6 @@
     text-decoration: none;
     }
 }
-.flyers-0{
-    grid-area: f0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // background-color: #01f39c;
-}
-.flyers-1{
-    grid-area: f1;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.flyers-2{
-    grid-area: f2;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .popular-flyers{
     position: absolute;
     border: 0.4px solid;
@@ -105,17 +76,13 @@
     padding: 2px;
     width: 42%;
     height: 30vh;
-    // background-image: url(https://dl.dropboxusercontent.com/s/igsqawly8yf4tof/pop-flyers.png?dl=0);
-    // background-image: url(https://dl.dropboxusercontent.com/s/c972kbu31jevmmh/pop-fly.png?dl=0);
-    // background-size: cover;
-    // background-repeat: no-repeat;
     text-decoration: none;
     color: white;
     display: grid;
     align-items: center;
     margin: 0px;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 15% 85%;
     grid-template-areas: 
         "hd hd hd"
         "f0 f1 f2";
@@ -135,6 +102,38 @@
         text-decoration: none;
     }
 }
+.flyers-0{
+    grid-area: f0;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: #01f39c;
+    padding: 0;
+    border-radius: 50px;
+}
+.flyers-1{
+    grid-area: f1;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.flyers-2{
+    grid-area: f2;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 
 
 
@@ -165,7 +164,38 @@
 
 
 .donations-header{
-    grid-area: head
+    grid-area: head;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a:visited {
+        text-decoration: none; color: white;
+    }
+    a {
+        text-decoration: none;
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+    }
+    a:link {
+        text-decoration: none;
+    }
+    
+    a:visited {
+        text-decoration: none;
+    }
+    
+    a:hover {
+        border-bottom: 0.4px solid;
+        border-bottom-color: #01f39c;
+        
+
+    }
+    
+    a:active {
+        text-decoration: none;
+    }
 }
 
 .project-0{

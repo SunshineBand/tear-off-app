@@ -71,7 +71,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center
+    align-content: center;
+    a:visited {
+        text-decoration: none; color: #01f39c;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 .edit {
@@ -80,6 +89,17 @@
     width: 30px;
     position: absolute;
     right: 0px;
+    a:visited {
+        text-decoration: none; color: white;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+        border-bottom: 0.4px solid;
+        border-bottom-color: #01f39c;
+    }
 }
 
 .torn-off {
