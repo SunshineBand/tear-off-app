@@ -38,42 +38,43 @@
 
     <p>
       <strong>Host:</strong>
-      <%= @flyer.user.email %>
+      <%= @flyer.user.username %>
     </p>
   </div>
 
   <div class = "tears">
-    <div class = "tears-1">
+    <div class = "tears-1 hvr-curl-bottom-right">
         Ticket 1
         <li> <%=@flyer.date_of_event%> </li>
          <li><%="$#{@flyer.cost}"%></li>
          <%= render 'layouts/stripe_form' %>
+         
     </div>
-    <div class = "tears-2">
+    <div class = "tears-2 hvr-curl-bottom-right">
         Ticket 2
         <li><%=@flyer.date_of_event%></li>
         <li><%="$#{@flyer.cost}"%></li>
        <%= render 'layouts/stripe_form' %>
     </div>
-    <div class = "tears-3">
+    <div class = "tears-3 hvr-curl-bottom-right">
         Ticket 3
         <li> <%=@flyer.date_of_event%></li>
          <li><%="$#{@flyer.cost}"%></li>
          <%= render 'layouts/stripe_form' %>
     </div>
-    <div class = "tears-4">
+    <div class = "tears-4 hvr-curl-bottom-right">
         Ticket 4
         <li> <%=@flyer.date_of_event%></li>
         <li> <%="$#{@flyer.cost}"%></li>
         <%= render 'layouts/stripe_form' %>
     </div>
-    <div class = "tears-5">
+    <div class = "tears-5 hvr-curl-bottom-right">
         Ticket 5
         <li> <%=@flyer.date_of_event%></li>
         <li> <%="$#{@flyer.cost}"%></li>
         <%= render 'layouts/stripe_form' %>
     </div>
-    <div class = "tears-6">
+    <div class = "tears-6 hvr-curl-bottom-right">
         Ticket 6
          <li><%=@flyer.date_of_event%></li>
          <li><%="$#{@flyer.cost}"%></li>

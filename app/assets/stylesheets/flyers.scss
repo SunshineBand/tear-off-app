@@ -16,7 +16,10 @@ a:visited {
   }
 }
 
+
 .tears-wrapper {
+    padding: 10px;
+    margin: 4px;
     display: grid;
     grid-template-columns: 80%;
     grid-template-rows: auto;
@@ -34,7 +37,7 @@ a:visited {
     grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
     grid-template-rows: 120px;
 }
-
+@import url("curl.scss");
 .tears-1, .tears-2, .tears-3, .tears-4, .tears-5, .tears-6 {
     border: 1px;
     border-style: dashed;
@@ -42,7 +45,12 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center
+    align-content: center;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
 }
 
 .category-list {
