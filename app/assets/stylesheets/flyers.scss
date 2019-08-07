@@ -1,9 +1,19 @@
 // Place all the styles related to the Flyers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
 
 .flyers-content {
-  margin: 20px 5%;
+  margin: 20px 8%;
+  h1 {
+    color: #2b2b2b;
+  }
 }
 
 .tears-wrapper {
@@ -40,19 +50,15 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: 20px 0;
 }
 
 .category-container {
   width: 100%;
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.flyer-container {
-  display: flex;
-  justify-content: space-around;
 }
 
 .category-container a {
@@ -61,7 +67,7 @@
   color: #FCFCFC;
   font-size: 1.25em;
 
-  .flyer-icon {
+  .category-icon {
     height: 100%;
     width: 100%;
     display: flex;
@@ -72,17 +78,31 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-
-    h3 {
-
-    }
   }
 }
 
-a {
-  text-decoration: none;
-}
+.popular {
+  background-color: #e6e6e6;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-a:visited {
-  text-decoration: none;
+  .flyer-container {
+    height: 55%;
+    background-color: #cacaca;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flyer-icon {
+    background-color: #969696;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
