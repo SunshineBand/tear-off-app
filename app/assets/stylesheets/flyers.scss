@@ -97,7 +97,7 @@ a:visited {
 }
 
 .popular {
-  // background-color: #e6e6e6;
+  margin-bottom: 30px;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -105,6 +105,11 @@ a:visited {
 
   h2 {
     margin-bottom: 10px;
+  }
+
+  > a {
+    color: #2b2b2b;
+    align-self: flex-end;
   }
 
   .flyer-container {
