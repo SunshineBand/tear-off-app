@@ -54,7 +54,7 @@
 #   },
 #   {
 #     name: "Fitness",
-#     image_link: "https://dl.dropbox.com/s/ba535wbra2l6h92/fitness.jpg?dl=0"
+#     image_link: "https://dl.dropbox.com/s/tklzi5qlu5cvl7b/fitness.png?dl=0"
 #   },
 #   {
 #     name: "Academics",
