@@ -1,0 +1,29 @@
+.about-wrapper {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        font-family: 'Amatic SC', cursive;
+        padding: 30px;
+        font-size: 4rem;
+    };
+    p {
+        padding-right: 350px;
+        padding-left: 350px;
+        padding-top: 75px;
+        padding-bottom: 100px;
+        
+    };
+    p:after {
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: relative;
+        z-index: -1;
+    }
+}
