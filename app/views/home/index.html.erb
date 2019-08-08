@@ -15,6 +15,7 @@
           <h4><%= flyer.title %></h4>
           <p>$<%= flyer.cost %></p>
           <p><%= flyer.project.name %></p>
+          <p><%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %> places left!</p>
         </div>
       <%end%>
     <% end %>
