@@ -28,7 +28,7 @@
     "popular donations";
     background-color: rgb(49,54,57);
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
 
 }
@@ -38,7 +38,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    h2 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 3rem;
+        padding: 5px;
+    }
 }
 
 .heading {
@@ -73,12 +78,11 @@
 }
 .popular-flyers{
     grid-area: popular;
-    position: absolute;
     border: 0.4px solid;
     border-color: #01f39c;
     padding: 2px;
-    width: 45%;
-    height: 30vh;
+    width: 90%;
+    height: 35vh;
     text-decoration: none;
     color: white;
     display: grid;
@@ -115,8 +119,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     // background-color: #01f39c;
+    height: 10vh;
+    width: 90%;
+    border-radius: 8%;
     padding: 10px;
-    border-radius: 50px;
+    margin: 2px;
 }
 .flyers-1{
     grid-area: f1;
@@ -127,8 +134,11 @@
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 10vh;
+    width: 90%;
+    border-radius: 8%;
     padding: 10px;
-    border-radius: 50px;
+    margin: 2px;
     
 }
 .flyers-2{
@@ -140,8 +150,11 @@
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 2px;
+    height: 10vh;
+    width: 90%;
+    border-radius: 8%;
     padding: 10px;
-    border-radius: 50px;
 }
 
 
@@ -154,10 +167,9 @@
     // background-repeat: no-repeat;
     border: 0.4px solid;
     border-color: #01f39c;
-    position: absolute;
-    right: 30px;
-    width: 42%;
-    height: 30vh;
+   
+    width: 90%;
+    height: 35vh;
     grid-area: donations;
     color: white;
     padding: 0;
@@ -206,6 +218,13 @@
     
     a:active {
         text-decoration: none;
+    }
+}
+
+.donations-header{
+    h2{
+        font-family: 'Amatic SC', cursive;
+        font-size: 3rem;
     }
 }
 

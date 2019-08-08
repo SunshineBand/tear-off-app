@@ -49,20 +49,40 @@
       <%= link_to 'more...', '/flyers/all' %>
     </div>
 
-    <div class="random-category-list">
-      <h2><%= @random_category.name %></h2>
-      <% @random_category.flyers.each do |flyer| %>
-        <div class="flyer">
-          <p><%= link_to flyer.title, flyer %></p>
-          <p><%= "$#{flyer.cost}" %></p>
-          <p><%= flyer.date_of_event %></p>
-          <p><%= flyer.project.name %></p>
-          <br>
+    <div class="popular">
+        <h2><%= @random_category.name %></h2>
+        <div class="flyer-container">
+          <% @random_category.flyers.each do |flyer| %>
+            <div class="flyer-icon category-image" style="background-image: url(<%= flyer.category.image_link %>)">
+              <%= link_to flyer do %>
+                <% if flyer.title.length <= 16 %>
+                  <h4 class="flyer-info">
+                    <%= flyer.title %>
+                  </h4>
+                <% else %>
+                  <h4 class="flyer-info">
+                    <%= flyer.title.slice(0...15) + " ..." %>
+                  </h4>
+                <% end %>
+                <h5 class="flyer-info">
+                  <%= flyer.project.name %>
+                </h5>
+                <h6 class="flyer-info">
+                  <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %> places left!
+                </h6>
+                
+                <!--
+                <p><%= link_to 'Show', flyer %></p>
+                <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
+                <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                -->
+              <% end %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-      <%= link_to 'more...', "/category/#{@random_category.id}" %>
-    </div>
-
+        <%= link_to 'more...', "/category/#{@random_category.id}" %>
+      </div>
+      
     <%= render 'layouts/projects_list', projects: @projects %>
   </div>
 </div>
