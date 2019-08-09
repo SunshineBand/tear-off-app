@@ -1,87 +1,62 @@
 <p id="notice"><%= notice %></p>
-<div class = "tears-wrapper">
-  <div class="flyer-info">
-    <p>
-      <strong>Project:</strong>
-      <%= @flyer.project.name %>
-    </p>
+<div class = "show-page-wrap">
+  <%if current_user == @flyer.user%>
+    <%= link_to 'Edit', edit_flyer_path(@flyer) %>  
+  <%end%>
+  <%= link_to 'Back', flyers_path %>
+  <div class = "tears-wrapper center-wrap">
+    <div class="show-flyer-info" style="background-image: url(<%=@flyer.category.image_link%>)">
 
-    <p>
-      <strong>Title:</strong>
-      <%= @flyer.title %>
-    </p>
-
-    <p>
-      <strong>Category:</strong>
-      <%= link_to @flyer.category.name, "/category/#{@flyer.category.id}" %>
-    </p>
-
-    <p>
-      <strong>Cost:</strong>
-      <%= "$#{@flyer.cost}" %>
-    </p>
-
-    <p>
-      <strong>Info:</strong>
-      <%= @flyer.info %>
-    </p>
-
-    <p>
-      <strong>Time of Event:</strong>
-      <%= @flyer.time %>
-    </p>
-
-    <p>
-      <strong>Event date:</strong>
-      <%= @flyer.date_of_event %>
-    </p>
-
-    <p>
-      <strong>Host:</strong>
-      <%= @flyer.user.username %>
-    </p>
-  </div>
-
-  <div class = "tears">
-    <div class = "tears-1 hvr-curl-bottom-right">
-        Ticket 1
-        <li> <%=@flyer.date_of_event%> </li>
-         <li><%="$#{@flyer.cost}"%></li>
-         <%= render 'layouts/stripe_form' %>
-         
+      <h1>
+        <%=@flyer.title %>
+      </h1>
+      <h2> EVENT INFORMATION BELOW:</h2>
+      <div class="event-info">
+         <div class="description"><h2>Description</h2> <p><%= @flyer.info %></p> </div>
+         <div class="category"><h2>Category</h2>  <p><%= link_to @flyer.category.name, "/category/#{@flyer.category.id}" %> </p></div>
+         <div class="supporting"><h2>Supporting</h2>  <p><%= @flyer.project.name %> </p></div>
+         <div class="cost"><h2>Cost</h2> <p><%= "$#{@flyer.cost}" %></p></div>
+         <div class="time"><h2>Time</h2> <p><%= @flyer.time.strftime("%l:%M %p") %></p></div>
+         <div class="date"><h2>Date</h2> <p><%= @flyer.date_of_event.strftime("%-d %B %Y") %></p></div>
+         <div class="host"><h2>Host</h2> <p><%= @flyer.user.username %></p></div>
+      </div>
+      
     </div>
-    <div class = "tears-2 hvr-curl-bottom-right">
-        Ticket 2
-        <li><%=@flyer.date_of_event%></li>
-        <li><%="$#{@flyer.cost}"%></li>
-       <%= render 'layouts/stripe_form' %>
-    </div>
-    <div class = "tears-3 hvr-curl-bottom-right">
-        Ticket 3
-        <li> <%=@flyer.date_of_event%></li>
-         <li><%="$#{@flyer.cost}"%></li>
-         <%= render 'layouts/stripe_form' %>
-    </div>
-    <div class = "tears-4 hvr-curl-bottom-right">
-        Ticket 4
-        <li> <%=@flyer.date_of_event%></li>
-        <li> <%="$#{@flyer.cost}"%></li>
+
+    <div class = "tears">
+      <div class = "tears-1 hvr-curl-bottom-right">
+          <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 1%></li>
+          <li><%="$#{@flyer.cost}"%></li>
+          <%= render 'layouts/stripe_form' %>
+          
+      </div>
+      <div class = "tears-2 hvr-curl-bottom-right">
+          <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 2%></li>
+          <li><%="$#{@flyer.cost}"%></li>
         <%= render 'layouts/stripe_form' %>
-    </div>
-    <div class = "tears-5 hvr-curl-bottom-right">
-        Ticket 5
-        <li> <%=@flyer.date_of_event%></li>
-        <li> <%="$#{@flyer.cost}"%></li>
-        <%= render 'layouts/stripe_form' %>
-    </div>
-    <div class = "tears-6 hvr-curl-bottom-right">
-        Ticket 6
-         <li><%=@flyer.date_of_event%></li>
-         <li><%="$#{@flyer.cost}"%></li>
-         <%= render 'layouts/stripe_form' %>
+      </div>
+      <div class = "tears-3 hvr-curl-bottom-right">
+          <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 3%></li>
+          <li><%="$#{@flyer.cost}"%></li>
+          <%= render 'layouts/stripe_form' %>
+      </div>
+      <div class = "tears-4 hvr-curl-bottom-right">
+          <li>Ticket No:<%=(FlyerAttendedByUser.where(flyer_id: params[:id])).count + 4%></li>
+          <li> <%="$#{@flyer.cost}"%></li>
+          <%= render 'layouts/stripe_form' %>
+      </div>
+      <div class = "tears-5 hvr-curl-bottom-right">
+          <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 5%> </li>
+          <li> <%="$#{@flyer.cost}"%></li>
+          <%= render 'layouts/stripe_form' %>
+      </div>
+      <div class = "tears-6 hvr-curl-bottom-right">
+          <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 6%></li>
+          <li><%="$#{@flyer.cost}"%></li>
+          <%= render 'layouts/stripe_form' %>
+      </div>
     </div>
   </div>
 </div>
 
-<%= link_to 'Edit', edit_flyer_path(@flyer) %> |
-<%= link_to 'Back', flyers_path %>
+
