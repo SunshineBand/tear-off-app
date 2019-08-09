@@ -26,11 +26,112 @@ a:visited {
     font-size: 3rem;
   }
 }
+.show-page-wrap {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  
+  a:visited {
+    text-decoration: none; color: white;
+  }
+  a {
+      text-decoration: none;
+      font-size: 0.75rem;
+  }
+  a:link {
+      text-decoration: none;
+  }
+  
+  a:visited {
+      text-decoration: none;
+  }
+  
+  a:active {
+  text-decoration: none;
+  }
+  
+}
+.show-flyer-info{
+  border: 1px #01f39c;
+  color: #FCFCFC;
+  border-style: solid;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1{
+    font-family: 'Amatic SC', cursive;
+    font-size: 4rem;
 
+  }
+  a {
+    // font-family: 'Amatic SC', cursive;
+    font-size: 1rem
+  }
+  h2 {
+    font-size: 2rem;
+    font-family: 'Amatic SC', cursive;
+    a {
+
+    }
+  }
+  p {
+    font-size: 1rem;
+  }
+  
+}
+.event-info {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: 10vh 10vh;
+ grid-template-areas: 
+ "description description description description description description"
+ "category supporting cost time date host";
+ text-align: center;
+ div {
+   h3{
+    font-family: 'Amatic SC', cursive;
+   }
+ }
+  .description {
+    grid-area: description
+  }
+  .category {
+    grid-area: category
+  }
+  .supporting {
+    grid-area: supporting
+  }
+  .cost {
+    grid-area: cost
+  }
+  .time {
+    grid-area: time
+  }
+  .date {
+    grid-area: date
+  }
+  .host{
+    grid-area: host
+  }
+}
+
+
+
+.center-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 
 .tears-wrapper {
     padding: 10px;
     margin: 4px;
+    display: flex;
     display: grid;
     grid-template-columns: 80%;
     grid-template-rows: auto;
@@ -41,23 +142,28 @@ a:visited {
 
 .tears {
     display: grid;
-    grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 120px;
 }
 @import url("curl.scss");
 .tears-1, .tears-2, .tears-3, .tears-4, .tears-5, .tears-6 {
-    border: 1px;
-    border-style: dashed;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
+  border: 1px #01f39c;
+  border-style: solid;
+  list-style: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  li {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+  }
 }
 
 .category-list {
@@ -149,3 +255,5 @@ a:visited {
       padding: 10px;
       color: white;
 }
+
+@import 'charges'
