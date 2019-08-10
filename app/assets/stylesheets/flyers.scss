@@ -229,14 +229,18 @@ a:visited {
     justify-content: space-between;
     align-items: center;
 
-    .flyer-icon {
+    a {
       height: 100%;
-      width: 12%;
-      border-radius: 8%;
-      padding: 10px;
-
-      h5, h6 {
-        font-style: italic;
+      width: 15%;
+      
+      .flyer-icon {
+        height: 100%;
+        border-radius: 8%;
+        padding: 10px;
+  
+        h5, h6 {
+          font-style: italic;
+        }
       }
     }
   }
