@@ -1,0 +1,33 @@
+<div class="flyers-helper">
+  <h2><%= heading %></h2>
+  <div class="flyer-container">
+    <% flyers.each do |flyer| %>
+      <div class="flyer-icon category-image" style="background-image: url(<%= flyer.category.main_image_link %>)">
+        <%= link_to flyer do %>
+          <% if flyer.title.length <= 16 %>
+            <h4 class="flyer-info">
+              <%= flyer.title %>
+            </h4>
+          <% else %>
+            <h4 class="flyer-info">
+              <%= flyer.title.slice(0...15) + " ..." %>
+            </h4>
+          <% end %>
+          <h5 class="flyer-info">
+            <%= flyer.project.name %>
+          </h5>
+          <h6 class="flyer-info">
+            <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count if flyer.max_attendees %> places left!
+          </h6>
+          
+          <!--
+          <p><%= link_to 'Show', flyer %></p>
+          <p><%= link_to 'Edit', edit_flyer_path(flyer) %></p>
+          <p><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          -->
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'more...', more_link %>
+</div>
