@@ -189,7 +189,7 @@ a:visited {
 .category-container a {
   height: 150px;
   width: 150px;
-  color: #FCFCFC;
+  color: rgb(255, 255, 255);
   font-size: 1.25em;
 
   .category-icon {
@@ -203,8 +203,8 @@ a:visited {
   }
 }
 
-.popular {
-  // background-color: #e6e6e6;
+.flyers-helper {
+  margin-bottom: 30px;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -214,6 +214,11 @@ a:visited {
     margin-bottom: 10px;
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
+  }
+
+  > a {
+    color: #2b2b2b;
+    align-self: flex-end;
   }
 
   .flyer-container {

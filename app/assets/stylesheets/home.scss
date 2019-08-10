@@ -76,85 +76,69 @@
     text-decoration: none;
     }
 }
-.popular-flyers{
-    grid-area: popular;
-    border: 0.4px solid;
-    border-color: #01f39c;
-    padding: 2px;
-    width: 90%;
-    height: 35vh;
-    text-decoration: none;
-    color: white;
-    display: grid;
-    align-items: center;
-    margin: 0px;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 15% 85%;
-    grid-template-areas: 
-        "hd hd hd"
-        "f0 f1 f2";
+
+.popular-flyers {
+  padding: 2px;
+  margin: 2px;
+  grid-area: popular;
+  border: 0.4px solid;
+  border-color: #01f39c;
+  width: 90%;
+  height: 35vh;
+  text-decoration: none;
+  color: white;
+  
+  .home-flyers {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     a:link {
-        text-decoration: none;
+      text-decoration: none;
     }
     
     a:visited {
-        text-decoration: none;
+      text-decoration: none;
     }
     
     a:hover {
-        text-decoration: none;
+      text-decoration: none;
     }
     
     a:active {
-        text-decoration: none;
+      text-decoration: none;
     }
-}
-.flyers-0{
-    grid-area: f0;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    // background-color: #01f39c;
-    height: 10vh;
-    width: 90%;
-    border-radius: 8%;
-    padding: 5px;
-    margin: 2px;
-}
-.flyers-1{
-    grid-area: f1;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 10vh;
-    width: 90%;
-    border-radius: 8%;
-    padding: 5px;
-    margin: 2px;
-    
-}
-.flyers-2{
-    grid-area: f2;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 2px;
-    height: 10vh;
-    width: 90%;
-    border-radius: 8%;
-    padding: 5px;
+
+    .flyer-container {
+      height: 60%;
+      padding: 0 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 80%;
+      grid-gap: 5%;
+      grid-template-areas:
+        "f0 f1 f2";
+      
+      .flyer-icon {
+        height: 100%;
+        border-radius: 8%;
+        padding: 10px;
+      }
+
+      .flyer-icon:nth-of-type(1) {
+        grid-area: f0;
+      }
+
+      .flyer-icon:nth-of-type(2) {
+        grid-area: f1;
+      }
+
+      .flyer-icon:nth-of-type(3) {
+        grid-area: f2;
+      }
+    }
+  }
 }
 
 
@@ -172,7 +156,6 @@
     height: 35vh;
     grid-area: donations;
     color: white;
-    padding: 0;
     margin: 2px;
     display: grid;
     align-items: center;
