@@ -1,5 +1,12 @@
 <div class="flyers-helper">
-  <h2><%= heading %></h2>
+  <div class="flyer-content-heading">
+    <h1><%= heading %></h1>
+    <%= link_to new_flyer_path do %>
+      <div class="host-button">
+        <strong>Host your own!</strong>
+      </div>
+    <% end %>
+  </div>
   <%= render 'flyers/flyers_view_container', flyers: flyers %>
   <%= link_to 'more...', more_link %>
 </div>
