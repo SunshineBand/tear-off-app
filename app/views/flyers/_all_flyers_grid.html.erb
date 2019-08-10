@@ -1,11 +1,17 @@
 <div class="all-flyers-helper">
   <div class="flyer-content-heading">
     <h1><%= heading %></h1>
-    <%= link_to new_flyer_path do %>
-      <div class="host-button">
-        <strong>Host your own!</strong>
-      </div>
-    <% end %>
+    <div class="heading-buttons">
+      <%= form_tag(request.env['PATH_INFO'], method: :get) do %>
+        <%= text_field_tag :title, params[:title] %>
+        <%= submit_tag 'Search' %>
+      <% end %>
+      <%= link_to new_flyer_path do %>
+        <div class="host-button">
+          <strong>Host your own!</strong>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div class="all-flyers-container">
     <% flyers.each do |flyer| %>

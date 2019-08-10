@@ -281,12 +281,19 @@ a:visited {
     font-size: 4rem;
   }
 
-  .host-button {
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: rgb(5, 224, 148);
-    color: white;
-    font-size: 1.5em;
+  .heading-buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    .host-button {
+      border-radius: 10px;
+      padding: 5px 10px;
+      background-color: rgb(5, 224, 148);
+      color: white;
+      font-size: 1.5em;
+    }
   }
 }
 
