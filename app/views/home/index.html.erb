@@ -4,8 +4,15 @@
 
 <div class="content-wrap">
 
-  <%= render 'flyers/flyers_view', flyers: @popular_flyers, heading: 'Popular Flyers', more_link: 'flyers/all' %>
-
+  <div class="popular-flyers">
+    <div class="home-flyers">
+        <div class="heading">
+          <h2> Popular Flyers </h2>
+          <%= link_to 'more tears.', flyers_path %>
+        </div>
+        <%= render 'flyers/flyers_view_container', flyers: @popular_flyers %>
+    </div>
+  </div>
   <div class="total-donations">
     <div class="donations-header"><h2> Total Donations </h2>  <%= link_to 'more info.', projects_path %></div>
     <% @projects.each_with_index do |project,index| %>
