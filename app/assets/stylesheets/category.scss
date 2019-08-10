@@ -1,4 +1,13 @@
 // Place all the styles related to the Category controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import'flyers';
+.category-body {
+  padding-top: 20px;
+  height: 100%;
+  background-color: #FCFCFC;
+  font-family: 'Red Hat Display', sans-serif;
+
+  .category-content {
+    margin: 0 8%;
+  }
+}
