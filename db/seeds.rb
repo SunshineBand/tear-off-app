@@ -68,13 +68,13 @@
 
 
 #### ONLY USE IF HELD PREVIOUS DATABASE OF ONLY CATEGORY NAMES
-count_id = 1
-categories.each do |category|
-  database_category = Category.find(count_id)
-  database_category.image_link = category[:image_link]
-  database_category.save!
-  count_id += 1
-end
+# count_id = 1
+# categories.each do |category|
+#   database_category = Category.find(count_id)
+#   database_category.image_link = category[:image_link]
+#   database_category.save!
+#   count_id += 1
+# end
 #### 
 
 #### INITIALISE CATEGORIES
@@ -84,16 +84,22 @@ end
 
 # projects = [
 #   {
-#     name: "Red Cross",
+#     name: "KidsXpress Mount Elbrus Climb",
 #     balance_raised: 0,
+#     active: true,
+#     image_link: "https://static1.squarespace.com/static/5923e02dd482e9dbfe3618b4/5924f3ecc534a5b20608f75b/59c45a2fcf81e0c3bc1e87f3/1537231951802/SydneyFamilyShow_Slide2.jpg?format=1000w"
 #   },
 #   {
-#     name: "Vinnies",
+#     name: "MS Readathon 2019",
 #     balance_raised: 0,
+#     active: true,
+#     image_link: "https://www.onlymelbourne.com.au/images3/0818-readathon.jpg"
 #   },
 #   {
-#     name: "Cancer Council",
+#     name: "Cure Cancer Open Air Cinema",
 #     balance_raised: 0,
+#     active: true,
+#     image_link: "https://i.ytimg.com/vi/ieFxoUbR4BA/maxresdefault.jpg"
 #   },
 # ]
 

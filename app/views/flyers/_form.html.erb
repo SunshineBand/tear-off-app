@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :project_id%>
-    <%= form.collection_select(:project_id, Project.all, :id, :name, {:prompt => 'Select a Project', :selected => @flyer.project_id.to_i}) %>
+    <%= form.collection_select(:project_id, Project.where(active: true), :id, :name, {:prompt => 'Select a Project', :selected => @flyer.project_id.to_i}) %>
   </div>
 
   <div class="field">
