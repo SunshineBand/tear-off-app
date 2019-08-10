@@ -1,8 +1,6 @@
 * {
   margin: 0;
   font-family: 'Red Hat Display', sans-serif;
-  
-  
   scroll-behavior: smooth;
 }
 
@@ -18,4 +16,5 @@ body {
 @import 'home';
 @import 'footer';
 @import 'about_us';
-@import 'projects'
+@import 'projects';
+@import 'category';

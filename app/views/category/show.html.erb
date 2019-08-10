@@ -1,5 +1,7 @@
-<%= stylesheet_link_tag 'flyers' %>
+<div class="category-body">
+  <div class="category-content">
+    <%= render 'flyers/all_flyers_grid', flyers: @category.flyers, heading: @category.name %>
 
-<%= render 'flyers/flyers_view', flyers: @category.flyers, heading: @category.name, more_link: '/flyers/all' %>
-
-<%= render 'layouts/projects_list', projects: @projects %>
+    <%= render 'layouts/projects_list', projects: @projects %>
+  </div>
+</div>

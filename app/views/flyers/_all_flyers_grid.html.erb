@@ -1,4 +1,4 @@
-<div class="flyers-helper">
+<div class="all-flyers-helper">
   <div class="flyer-content-heading">
     <h1><%= heading %></h1>
     <%= link_to new_flyer_path do %>
@@ -7,6 +7,9 @@
       </div>
     <% end %>
   </div>
-  <%= render 'flyers/flyers_view_container', flyers: flyers %>
-  <%= link_to 'more...', more_link %>
+  <div class="all-flyers-container">
+    <% flyers.each do |flyer| %>
+      <%= render 'flyers/flyer_icon', flyer: flyer %>
+    <% end %>
+  </div>
 </div>
