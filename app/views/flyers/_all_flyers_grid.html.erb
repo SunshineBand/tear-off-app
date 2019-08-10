@@ -1,5 +1,12 @@
 <div class="all-flyers-helper">
-  <h2><%= heading %></h2>
+  <div class="flyer-content-heading">
+    <h1><%= heading %></h1>
+    <%= link_to new_flyer_path do %>
+      <div class="host-button">
+        <strong>Host your own!</strong>
+      </div>
+    <% end %>
+  </div>
   <div class="all-flyers-container">
     <% flyers.each do |flyer| %>
       <%= render 'flyers/flyer_icon', flyer: flyer %>
