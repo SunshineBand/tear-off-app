@@ -122,7 +122,7 @@
     height: 10vh;
     width: 90%;
     border-radius: 8%;
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
 }
 .flyers-1{
@@ -137,7 +137,7 @@
     height: 10vh;
     width: 90%;
     border-radius: 8%;
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
     
 }
@@ -154,7 +154,7 @@
     height: 10vh;
     width: 90%;
     border-radius: 8%;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -230,11 +230,50 @@
 
 .project-0{
     grid-area: p0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    // background-size: contain;
+    // background-repeat: no-repeat
+    p {
+        font-family: 'Amatic SC', cursive;
+        font-size: 1.6rem;
+        img {
+            width: auto;
+            height: 120px;
+            border-radius: 5px;
+        }
+    }
+    
 }
 .project-1{
     grid-area: p1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    p {
+        font-family: 'Amatic SC', cursive;
+        font-size: 1.6rem;
+        img {
+            width: auto;
+            height: 120px;
+            border-radius: 5px;
+        }
+    }
 
 }
 .project-2 {
-    grid-area: p2
+    grid-area: p2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    p {
+        font-family: 'Amatic SC', cursive;
+        font-size: 1.6rem;
+        img {
+            width: auto;
+            height: 120px;
+            border-radius: 5px;
+        }
+    }
 }
