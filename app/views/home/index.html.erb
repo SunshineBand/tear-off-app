@@ -15,6 +15,7 @@
           <h4><%= flyer.title %></h4>
           <p>$<%= flyer.cost %></p>
           <p><%= flyer.project.name %></p>
+          <p><%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %> places left!</p>
         </div>
       <%end%>
     <% end %>
@@ -24,7 +25,9 @@
     <div class="donations-header"><h2> Total Donations </h2>  <%= link_to 'more info.', projects_path %></div>
     <% @projects.each_with_index do |project,index| %>
     <div class="project-<%="#{index}"%>">
-      <%= "$#{project.balance_raised} has been raised for #{project.name}" %>
+      <p><%= "$#{project.balance_raised}" %></p>
+      <p><%= "#{project.name}"%></p>
+      <p><img src="<%=project.image_link%>"></p>
     </div>
     <% end %>
     <div class="project-info-link">

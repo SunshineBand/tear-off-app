@@ -9,6 +9,7 @@
     <div class="left-wrap">
       
       <div class="image-border">
+        
           <%if @profile.uploaded_image.attached?%>
             <%= image_tag @profile.uploaded_image.service_url, class: 'image-size'%>
           <%else%>

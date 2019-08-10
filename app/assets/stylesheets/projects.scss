@@ -1,0 +1,39 @@
+.title { text-align: center;
+        letter-spacing: 10px;
+        margin-top:10px;
+        h1 {
+            font-family: 'Amatic SC', cursive;
+            color: white;
+            font-size: 3rem;
+        }
+        
+    
+
+}
+
+.project{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:30px;
+    align-items:flex-start;
+    
+    img{
+        max-width: 500px;
+        max-height: auto;
+        border-radius: 10px;
+    }
+
+}
+
+
+
+.text{
+    margin-left:30px;
+    color: white;
+   
+    a{text-align: end;
+    color:#01f39c;
+    font-size:1.5em}  
+}
+
