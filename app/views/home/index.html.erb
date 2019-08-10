@@ -13,6 +13,7 @@
         <%= render 'flyers/flyers_view_container', flyers: @popular_flyers %>
     </div>
   </div>
+  
   <div class="total-donations">
     <div class="donations-header"><h2> Total Donations </h2>  <%= link_to 'more info.', projects_path %></div>
     <% @projects.each_with_index do |project,index| %>
