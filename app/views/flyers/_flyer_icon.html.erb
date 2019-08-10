@@ -12,9 +12,11 @@
     <h5 class="flyer-info">
       <%= flyer.project.name %>
     </h5>
-    <h6 class="flyer-info">
-      <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count if flyer.max_attendees %> places left!
-    </h6>
+    <% if flyer.max_attendees  %>
+      <h6 class="flyer-info">
+        <%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %> places left!
+      </h6>
+    <% end %>
     
     <!--
     <p><%= link_to 'Show', flyer %></p>

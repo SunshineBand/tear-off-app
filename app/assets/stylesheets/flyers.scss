@@ -252,6 +252,25 @@ a:visited {
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
   }
+
+  .all-flyers-container {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    grid-column-gap: 5%;
+    grid-row-gap: 30px;
+
+    .flyer-icon {
+      height: 175px;
+      border-radius: 8%;
+      padding: 10px;
+
+      h5, h6 {
+        font-style: italic;
+      }
+    }
+  }
 }
 
 .random-category-list {
