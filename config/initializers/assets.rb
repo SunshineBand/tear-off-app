@@ -13,6 +13,7 @@ Rails.application.config.assets.precompile += %w( profiles.css )
 Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( footer.css )
 Rails.application.config.assets.precompile += %w( charges.css )
+Rails.application.config.assets.precompile += %w( view_profile_modal.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
