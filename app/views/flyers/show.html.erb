@@ -11,7 +11,7 @@
         <%=@flyer.title %>
       </h1>
       <h2> EVENT INFORMATION BELOW:</h2>
-      <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+      <% if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists? %>
         <%= stylesheet_link_tag 'view_profile_modal' %>
           <button id="myBtn">Who's Going?</button>
 
@@ -79,7 +79,7 @@
       <div class = "tears-1 hvr-curl-bottom-right">
           <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 1%></li>
           <li><%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
@@ -89,7 +89,7 @@
       <div class = "tears-2 hvr-curl-bottom-right">
           <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 2%></li>
           <li><%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
@@ -98,7 +98,7 @@
       <div class = "tears-3 hvr-curl-bottom-right">
           <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 3%></li>
           <li><%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
@@ -107,7 +107,7 @@
       <div class = "tears-4 hvr-curl-bottom-right">
           <li>Ticket No:<%=(FlyerAttendedByUser.where(flyer_id: params[:id])).count + 4%></li>
           <li> <%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
@@ -116,7 +116,7 @@
       <div class = "tears-5 hvr-curl-bottom-right">
           <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 5%> </li>
           <li> <%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
@@ -125,7 +125,7 @@
       <div class = "tears-6 hvr-curl-bottom-right">
           <li>Ticket No: <%=(FlyerAttendedByUser.where(flyer_id: params[:id].to_i)).count + 6%></li>
           <li><%="$#{@flyer.cost}"%></li>
-          <%if FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
+          <%if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists?%>
             <li> You've already Torn!</li>
           <%else%>
             <%= render 'layouts/stripe_form' %>
