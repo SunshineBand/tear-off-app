@@ -1,0 +1,12 @@
+<div class="category-index-body">
+  <h1>Our Categories</h1>
+  <div class="category-index">
+    <% @categories.each do |category| %>
+      <%= link_to "/category/#{category.id}" do %>
+        <div class="category-icon category-image" style="background-image: url(<%= category.image_link %>)">
+          <h3><%= category.name unless category.name == "Other"%></h3>
+        </div>
+      <% end %>
+    <% end %>
+  </div>  
+</div>
