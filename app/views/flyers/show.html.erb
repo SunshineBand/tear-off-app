@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class = "show-page-wrap">
-  <%if current_user == @flyer.user%>
-    <%= link_to 'Edit', edit_flyer_path(@flyer) %>  
-  <%end%>
-  <%= link_to 'Back', flyers_path %>
+  <div class = "edit-back">
+    <%if current_user.id == @flyer.user.id%>
+      <%= link_to 'Edit', edit_flyer_path(@flyer) %>  
+    <%end%>
+      <%= link_to 'Back', flyers_path %>
+  </div>
   <div class = "tears-wrapper center-wrap">
     <div class="show-flyer-info category-image" style="background-image: url(<%=@flyer.category.image_link%>)">
 

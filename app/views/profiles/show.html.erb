@@ -3,8 +3,10 @@
 
 <div class="profile-body">
   <div class="edit">
+    <%if current_user.profile.id==params[:id].to_i%>
       <%= link_to 'Edit', edit_profile_path(@profile) %> 
-    </div>
+    <%end%>
+  </div>
   <div class="full-wrap">
     <div class="left-wrap">
       
@@ -52,5 +54,22 @@
       <%end%>
     </div>
   </div>
-  
+
+  <%if @hosted_flyers.empty? == false%>
+    <div class="my-tears-wrapper">
+      <h2 class="torn-off"><strong>Hosting:</strong></h2><br>
+      <div class = "my-tears-grid">
+        <%@hosted_flyers.each do |flyer|%>
+        <div class = "my-tears">
+          <p>Title: <%=flyer.title%> </p>  
+          <p>Information:<%=flyer.info%></p>  
+          <p>Time of Event:<%=flyer.time.strftime("%H:%M %P")%></p>  
+          <p>Date of Event: <%=flyer.date_of_event.strftime("%d %B %Y")%> </p>  
+          <p>Location: <br><%=flyer.address%></p>
+            <%= link_to "Show Listing", "/flyers/#{flyer.id}" %>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  <%end%>
 </div>
