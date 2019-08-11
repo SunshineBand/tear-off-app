@@ -220,6 +220,11 @@ a:visited {
   justify-content: space-around;
   align-items: center;
   margin: 20px 0;
+
+  > a {
+    align-self: flex-end;
+    color: #2b2b2b;
+  }
 }
 
 .category-container {
