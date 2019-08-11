@@ -12,7 +12,6 @@ a:visited {
 
 .flyers-body {
   height: 100%;
-  background-color: white;
   padding-top: 20px;
   font-family: 'Red Hat Display', sans-serif;
 }
@@ -189,7 +188,7 @@ a:visited {
 .category-container a {
   height: 150px;
   width: 150px;
-  color: rgb(255, 255, 255);
+  color: #FCFCFC;
   font-size: 1.25em;
 
   .category-icon {
@@ -203,9 +202,9 @@ a:visited {
   }
 }
 
-.flyers-helper {
-  margin-bottom: 30px;
-  height: 300px;
+.popular {
+  // background-color: #e6e6e6;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -213,8 +212,8 @@ a:visited {
     text-decoration: none; color: white;
   }
   a {
-    text-decoration: none;
-    font-size: 0.75rem;
+      text-decoration: none;
+      font-size: 0.75rem;
   }
   a:link {
     text-decoration: none;
@@ -233,12 +232,6 @@ a:visited {
     font-size: 3rem;
   }
 
-  > a {
-    margin-top: 20px;
-    color: #2b2b2b;
-    align-self: flex-end;
-  }
-
   .flyer-container {
     height: 50%;
     padding: 10px;
@@ -247,35 +240,9 @@ a:visited {
     justify-content: space-between;
     align-items: center;
 
-    a {
-      height: 100%;
-      width: 15%;
-
-      .flyer-icon {
-        height: 100%;
-        border-radius: 8%;
-        padding: 10px;
-  
-        h5, h6 {
-          font-style: italic;
-        }
-      }
-    }
-  }
-}
-
-.all-flyers-helper {
-
-  .all-flyers-container {
-    margin: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: auto;
-    grid-column-gap: 5%;
-    grid-row-gap: 30px;
-
     .flyer-icon {
-      height: 175px;
+      height: 100%;
+      width: 12%;
       border-radius: 8%;
       padding: 10px;
 
@@ -283,27 +250,6 @@ a:visited {
         font-style: italic;
       }
     }
-  }
-}
-
-.flyer-content-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h1 {
-    color: #2b2b2b;
-    margin-bottom: 10px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 4rem;
-  }
-
-  .host-button {
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: rgb(5, 224, 148);
-    color: white;
-    font-size: 1.5em;
   }
 }
 
