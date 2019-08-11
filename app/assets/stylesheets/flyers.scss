@@ -10,6 +10,15 @@ a:visited {
   color: white;
 }
 
+.all-body {
+  background-color: #FCFCFC;
+  padding: 40px 0;
+
+  .all-flyers-helper {
+    margin: 0 8%; 
+  }
+}
+
 .flyers-body {
   height: 100%;
   background-color: #FCFCFC;
