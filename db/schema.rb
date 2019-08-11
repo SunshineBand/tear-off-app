@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_023502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_link"
+    t.string "main_image_link"
   end
 
   create_table "flyer_attended_by_users", force: :cascade do |t|

@@ -5,22 +5,15 @@
 <div class="content-wrap">
 
   <div class="popular-flyers">
-    <div class="heading">
-      <h2> Popular Flyers </h2>
-      <%= link_to 'more tears.', flyers_path %>
-    </div>
-    <% @popular_flyers.each_with_index do |flyer, index| %>
-      <%= link_to flyer do%>
-        <div class="flyers-<%="#{index}"%>" style="background-image: url(<%=flyer.category.image_link%>)">
-          <h4><%= flyer.title %></h4>
-          <p>$<%= flyer.cost %></p>
-          <p><%= flyer.project.name %></p>
-          <p><%= flyer.max_attendees - FlyerAttendedByUser.where(flyer_id: flyer.id).count %> places left!</p>
+    <div class="home-flyers">
+        <div class="heading">
+          <h2> Popular Flyers </h2>
+          <%= link_to 'more tears.', flyers_path %>
         </div>
-      <%end%>
-    <% end %>
+        <%= render 'flyers/flyers_view_container', flyers: @popular_flyers %>
+    </div>
   </div>
-
+  
   <div class="total-donations">
     <div class="donations-header"><h2> Total Donations </h2>  <%= link_to 'more info.', projects_path %></div>
     <% @projects.each_with_index do |project,index| %>
