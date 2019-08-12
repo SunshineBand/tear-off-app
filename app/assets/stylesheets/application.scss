@@ -9,6 +9,10 @@ body {
   background-color: #313639;
 }
 
+a:visited {
+  color:white;
+}
+
 @import 'charges';
 @import 'flyers';
 @import 'profiles';
