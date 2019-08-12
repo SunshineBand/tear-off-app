@@ -95,6 +95,10 @@
     a {
         text-decoration: none;
     }
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
     a:hover {
         text-decoration: none;
         border-bottom: 0.4px solid;
