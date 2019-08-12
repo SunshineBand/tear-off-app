@@ -80,13 +80,14 @@ a:visited {
   display: flex;
   flex-direction: column;
   align-self: center;
+  text-align: left;
   
   a:visited {
     text-decoration: none; color: white;
   }
   a {
-      text-decoration: none;
-      font-size: 0.75rem;
+    text-decoration: none;
+    font-size: 0.75rem;
   }
   a:link {
       text-decoration: none;
@@ -379,4 +380,33 @@ a:visited {
       color: white;
 }
 
-@import 'charges'
+@import 'charges';
+.edit-back {
+  position: absolute;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  width: 10%;
+  
+  a:visited {
+    text-decoration: none; color: white;
+    font-size: 1rem;
+  }
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+  a:hover {
+    text-decoration: none;
+    border-bottom: 0.4px solid;
+    border-bottom-color: #01f39c;
+    font-size: 1rem;
+  }
+}

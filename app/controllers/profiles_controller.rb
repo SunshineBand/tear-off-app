@@ -14,6 +14,8 @@ class ProfilesController < ApplicationController
     @join_tables.each do |join|
       @attended_flyer << join.flyer 
     end
+    @hosted_flyers = Flyer.where(user_id: current_user.id)
+    
    
     
   end
