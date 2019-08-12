@@ -1,36 +1,37 @@
-<%= form_with(model: profile, local: true) do |form| %>
-  <% if profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div class="form-wrapper">
+  <%= form_with(model: profile, local: true) do |form| %>
+    <% if profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-      <ul>
-      <% profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= form.label :city %>
+      <%= form.text_field :city %>
+    </div>
+
+    <div class="field">
+      <%= form.label :bio %>
+      <%= form.text_area :bio %>
+    </div>
+
+    <div class="field">
+      <%= form.label :uploaded_image %>
+      <%= form.file_field :uploaded_image %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id  %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_area :bio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :uploaded_image %>
-    <%= form.file_field :uploaded_image %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id  %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
