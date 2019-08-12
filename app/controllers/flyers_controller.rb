@@ -23,7 +23,6 @@ class FlyersController < ApplicationController
 
   # GET /flyers/new
   def new
-    user_signed_in?
     @flyer = Flyer.new
   end
 
