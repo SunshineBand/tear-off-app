@@ -1,6 +1,5 @@
 class FlyersController < ApplicationController
   before_action :set_flyer, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # GET /flyers
   # GET /flyers.json
   def index
@@ -24,7 +23,6 @@ class FlyersController < ApplicationController
 
   # GET /flyers/new
   def new
-    user_signed_in?
     @flyer = Flyer.new
   end
 

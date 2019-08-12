@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  authenticate :user do
+    resources :flyers, only: [:new, :edit, :create, :update, :destroy]
+
+    resources :profiles, only: [:new, :show, :index]
+  end
   get "/flyers/all" => "flyers#all"
   resources :flyers do
     resources :charges
