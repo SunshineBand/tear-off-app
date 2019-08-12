@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="flyers-body">
   <div class="flyers-content">
     <h1>Find your Class</h1>
@@ -19,7 +17,5 @@
     <%= render 'flyers_view', flyers: @popular_flyers, heading: 'Popular Flyers', more_link: '/flyers/all' %>
 
     <%= render 'flyers_view', flyers: @random_category.flyers[0..5], heading: @random_category.name, more_link: "/category/#{@random_category.id}" %>
-     
-    <%= render 'layouts/projects_list', projects: Project.where(active: true) %>
   </div>
 </div>
