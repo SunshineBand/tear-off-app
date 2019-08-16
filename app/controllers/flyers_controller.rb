@@ -19,11 +19,16 @@ class FlyersController < ApplicationController
   # GET /flyers/1
   # GET /flyers/1.json
   def show
+    @comment = Comment.new()
+    @comments = Comment.where(flyer_id: params[:id])
   end
+  
 
   # GET /flyers/new
   def new
     @flyer = Flyer.new
+    
+    @comment = Comment.new()
   end
 
   # GET /flyers/1/edit

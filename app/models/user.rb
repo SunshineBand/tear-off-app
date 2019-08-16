@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :flyers_attended_by_users 
   has_many :flyers, through: :flyers_attended_by_users
   has_one :profile
+  has_many :comments
 end

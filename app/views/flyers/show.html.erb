@@ -12,58 +12,115 @@
         <%=@flyer.title %>
       </h1>
       <h2> EVENT INFORMATION BELOW:</h2>
-      <% if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists? %>
-        <%= stylesheet_link_tag 'view_profile_modal' %>
-          <button id="myBtn">Who's Going?</button>
+      <div class="comments">
+        <% if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists? %>
+          <%= stylesheet_link_tag 'view_profile_modal' %>
+            <button id="myBtn">Discussion</button>
 
-          <!-- The Modal -->
-          <div id="myModal" class="modal">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>People Attending</h2>
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Comment Section</h2>
+                </div>
+                <div class="modal-body">
+                  <%@comments.each do |comment|%>
+                    <div class="individual-comments">
+                      <p><%=comment.post%> </p>
+                      <p>By:<%=comment.user.username%></p>
+                    </div>
+                  <%end%>
+                  <%= render '/comments/form', :comment => @comment %>
+                </div>
               </div>
-              <div class="modal-body">
-                <%FlyerAttendedByUser.where(flyer_id: params[:id]).each do |join|%>
-                  <%@attendee_id =join.user.profile.id%>
-                   <a href=<%="/profiles/#{@attendee_id}"%>><%="#{join.user.username}"%></a>
-                <%end%>
-              </div>
+
             </div>
 
-          </div>
+            <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
 
-          <script>
-          // Get the modal
-          var modal = document.getElementById("myModal");
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
 
-          // Get the button that opens the modal
-          var btn = document.getElementById("myBtn");
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
 
-          // When the user clicks the button, open the modal 
-          btn.onclick = function() {
-            modal.style.display = "block";
-          }
-
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function() {
-            modal.style.display = "none";
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-            if (event.target == modal) {
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
               modal.style.display = "none";
             }
-          }
-          </script>
-      <%end%>
 
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
+        <%end%>
+      </div>
+      <div class="who_going">
+        <% if user_signed_in? && FlyerAttendedByUser.where(flyer_id: params[:id], user_id: current_user.id).exists? %>
+          <%= stylesheet_link_tag 'view_profile_modal' %>
+            <button id="goBtn">Who's Going?</button>
+
+            <!-- The Modal -->
+            <div id="goModal" class="go-modal">
+
+              <!-- Modal content -->
+              <div class="go-modal-content">
+                <div class="go-modal-header">
+                  <span class="go-close">&times;</span>
+                  <h2>People Attending</h2>
+                </div>
+                <div class="go-modal-body">
+                  <%FlyerAttendedByUser.where(flyer_id: params[:id]).each do |join|%>
+                    <%@attendee_id =join.user.profile.id%>
+                    <a href=<%="/profiles/#{@attendee_id}"%>><%="#{join.user.username}"%></a>
+                  <%end%>
+                </div>
+              </div>
+
+            </div>
+
+            <script>
+            // Get the modal
+            var modal = document.getElementById("goModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("goBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("go-close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
+        <%end%>
+      </div>
       <div class="event-info">
          <div class="description"><h2>Description</h2> <p><%= @flyer.info %></p> </div>
          <div class="category"><h2>Category</h2>  <p><%= link_to @flyer.category.name, "/category/#{@flyer.category.id}" %> </p></div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :flyers, only: [:new, :edit, :create, :update, :destroy]
 
     resources :profiles, only: [:new, :show, :index]
+    resources :comments, only: [:new, :show, :create, :destroy]
   end
   get "/flyers/all" => "flyers#all"
   resources :flyers do

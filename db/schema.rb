@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_023502) do
+ActiveRecord::Schema.define(version: 2019_08_15_224643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 2019_08_10_023502) do
     t.datetime "updated_at", null: false
     t.string "image_link"
     t.string "main_image_link"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "post"
+    t.bigint "flyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["flyer_id"], name: "index_comments_on_flyer_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "flyer_attended_by_users", force: :cascade do |t|
@@ -103,6 +113,8 @@ ActiveRecord::Schema.define(version: 2019_08_10_023502) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "flyers"
+  add_foreign_key "comments", "users"
   add_foreign_key "flyer_attended_by_users", "flyers"
   add_foreign_key "flyer_attended_by_users", "users"
   add_foreign_key "flyers", "categories"
